@@ -1,0 +1,11 @@
+{
+  "name": "programacaoweb_1s2025",
+  "version": "1.0.0",
+  "description": "<h2 align=\"center\">Repositório dedicado a matéria de Programação WEB na UCB </a> \r </h2>\r   <br>\r <div align=\"center\">\r   <img src=\"https://ucb.catolica.edu.br/hubfs/UCB_GRADUACAO/imgs/home__logo--header.svg\" alt=\"Imagem Centralizada e Redimensionada\" width=\"500\">\r </div>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
