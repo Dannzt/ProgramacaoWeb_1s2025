@@ -22,7 +22,7 @@ a= [3, 4],    ===>  at=  [ 1  3  5 ]
          for(let i = 0; i < A.length; i++){
             linha += A[i][j] + "\t";
          }
-         console.log(linha);
+         console.log(linha); 
       }
    }
 
@@ -33,4 +33,3 @@ a= [3, 4],    ===>  at=  [ 1  3  5 ]
    ];
    
    transporMatriz(matriz);
-
