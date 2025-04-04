@@ -1,12 +1,13 @@
-const itens = [];
+let itens = [];
 
 function adicionar(item){
-
-    if(validar_item_a_cadastrar(item)){
+    let item_valido = validar_item_a_cadastrar(item);
+    
+    if(item_valido){
         itens.push(item);
-        return true;
     }
-    return false;
+
+    return item_valido;
 }
 
 function listar(){
@@ -14,7 +15,20 @@ function listar(){
 }
 
 function editar(id, qtd){
-    return editar_item(id, qtd);
+    if(
+        !is_numerico(id) || 
+        !is_id_cadastrado(id) ||
+        !is_numerico(qtd) ||
+        qtd < 0
+    ){
+        return false;
+    }
+    itens.forEach(item_cadastrado => {
+        if(item_cadastrado.id == id){
+            item_cadastrado.qtd = qtd;
+        }
+    });
+    return true;
 }
 
 module.exports = {
@@ -31,59 +45,31 @@ function is_numerico(n){
 }
 
 function is_id_cadastrado(id){
-    for(let indice in itens) {
-        let item_cadastrado = itens[indice];
-        if(item_cadastrado.id == id){
-            return true;
+    let item_existente = false;
+    itens.forEach(item_cadastrado => {
+        if(id == item_cadastrado.id){
+            item_existente = true;
         }
-    }
-    return false;
+    });
+    return item_existente;
 }
 
 function validar_item_a_cadastrar(item){
     let item_valido = true;
-    // Se o id for NaN, nulo ou menor igual a 0
-    // Não deve ser cadastrado
     if(!is_numerico(item.id) || item.id <= 0){
         item_valido = false;
     }
 
-    // Se o id já existitir, não deve ser cadastrado
     if(is_id_cadastrado(item.id)){
-        item_valido = false;
+        item_valido = false; 
+    }
+
+    if(item.nome.length == 0){
+        item_valido = false; 
     }
 
     if(!is_numerico(item.qtd) || item.qtd < 0){
         item_valido = false;
     }
-
-    if(item.nome.length < 1){
-        item_valido = false;    
-    }
-
     return item_valido;
-}
-
-function editar_item(id, qtd){
-    console.log(`${id} - ${qtd}`);
-    if(!is_numerico(id) || id == 0){
-        console.log('id invalido');
-        return false;
-    }
-    if(!is_id_cadastrado(id)){
-        console.log('id n cadastrado');
-        return false;
-    }
-    if(!is_numerico(qtd) || qtd < 0){
-        console.log('qtd invalido');
-        return false;
-    }
-
-    for(let indice in itens){
-        let item_cadastrado = itens[indice];
-        if(item_cadastrado.id == id){
-            item_cadastrado.qtd = qtd;
-        }
-    }
-    return true;
 }
