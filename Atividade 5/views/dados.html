@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmação</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-12">
+                <a href="/" class="btn btn-link">Voltar</a>
+            </div>
+
+<div class="container mt-4">
+    <h2>Agendamento Confirmado</h2>
+    <ul>
+        <li><strong>Nome:</strong> {{dados.nome}} {{dados.sobrenome}}</li>
+        <li><strong>CPF:</strong> {{dados.cpf}}</li>
+        <li><strong>Telefone:</strong> {{dados.telefone}}</li>
+        <li><strong>Nacionalidade:</strong> {{dados.nacionalidade}}</li>
+        <li><strong>CEP:</strong> {{dados.cep}}</li>
+        <li><strong>Cidade:</strong>{{dados.Cidade}}</li>
+        <li><strong>Endereço:</strong> {{dados.endereco}}</li>
+        <li><strong>Clínica:</strong> {{dados.clinica}}</li>
+        <li><strong>Especialidade:</strong> {{dados.especialidade}}</li>
+        <li><strong>Data:</strong> {{dados.data_agendamento}}</li>
+        <li><strong>Hora:</strong> {{dados.hora}}</li>
+        <li><strong>Observação:</strong> {{dados.observacao}}</li>
+    </ul>
+
+
+</div>
+</body>
+</html>
