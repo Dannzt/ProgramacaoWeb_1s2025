@@ -22,7 +22,7 @@ app.post('/dados', (req, res) => {
         sobrenome: req.body.sobrenome,
         cpf: req.body.cpf,
         telefone: req.body.telefone,
-        nacionalidade: req.body.nacionalidade,
+        nascimento: req.body.nascimento,
         cep: req.body.cep,
         endereco: req.body.endereco,
         clinica: req.body.clinica,
@@ -33,7 +33,7 @@ app.post('/dados', (req, res) => {
     };
 
     const camposObrigatorios = [
-        'nome', 'sobrenome', 'cpf', 'telefone', 'nacionalidade',
+        'nome', 'sobrenome', 'cpf', 'telefone', 'nascimento',
         'cep', 'endereco', 'clinica', 'especialidade', 'data_agendamento', 'hora'
     ];
 

@@ -1,5 +1,5 @@
 {
-  "name": "atividade-5",
+  "name": "correcaoemsala",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -7,9 +7,9 @@
   },
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "express": "^4.21.2",
     "mustache-express": "^1.3.2"
-  },
-  "description": "**Instruções**:"
+  }
 }
