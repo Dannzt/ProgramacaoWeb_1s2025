@@ -11,6 +11,7 @@ const session = require('express-session');
 const db  = require('./db');
 const app = express();
 
+app.use(express.static('public'));
 app.engine('html', mustacheExpress());
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
